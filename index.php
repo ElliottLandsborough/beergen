@@ -30,7 +30,7 @@
     <body>
 		<h1>BeerGen</h1>
 		<p>Get a legit barcode emailed to your inbox <a href="https://www.brewdog.com/1million" target="_blank">here</a>.</p>
-		<p>Please enter a number netween 10 and 99999 for 'end'.</p>
+		<p>Please enter a number netween 10 and 1000000 for 'end'.</p>
 		<p>I will count down from it 10 times.</p>
 		<p>From comparison of a few barcodes it looks like they all start with '5383' and end with the total number of codes that have been given away.</p>
 		<p>The middle is padded with '0' until the length is 14 characters.</p>
@@ -70,7 +70,7 @@ if ($front && $end) {
             </p>
             <p>
                 End: 
-                <input type="text" name="end" placeholder="99999" value="<?php echo isset($_GET['end']) ? intval($end) : '8700' ?>" />
+                <input type="text" name="end" placeholder="999999" value="<?php echo isset($_GET['end']) ? intval($end) : '8700' ?>" />
             </p>
             <p>
                 <input type="submit" style="height:48px;" value="Generate Barcodes" />
