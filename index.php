@@ -4,8 +4,28 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>BeerGen</title>
-        <meta name="description" content="">
+        <meta name="description" content="Unlimited Free Beers!">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://brewdog1million.com/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://brewdog1million.com/images/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="https://brewdog1million.com/images/android-chrome-512x512.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://brewdog1million.com/images/favicon-32x32.png">
+        <link rel="mask-icon" href="https://brewdog1million.com/images/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="msapplication-TileImage" content="https://brewdog1million.com/images/mstile-150x150.png">
+        <meta name="theme-color" content="#5bbad5">
+
+        <meta property="og:url" content="https://elliott.re/beergen">
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="BeerGen">
+        <meta property="og:image" content="https://brewdog1million.com/images/brw-facebook.jpg">
+        <meta property="og:site_name" content="BeerGen">
+        <meta property="og:description" content="Unlimited Free Beers!">
+
+        <meta name="twitter:title" content="Unlimited Free Beers!">
+        <meta name="twitter:description" content="Unlimited free beers - http://elliott.re/beergen #MillionPunks">
+        <meta name="twitter:url" content="http://elliott.re/beergen/">
     </head>
     <body>
 		<h1>BeerGen</h1>
