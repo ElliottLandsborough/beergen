@@ -53,7 +53,7 @@ if ($front && $end) {
                 <input type="text" name="end" placeholder="99999" value="<?php echo isset($_GET['end']) ? intval($end) : '8700' ?>" />
             </p>
             <p>
-                <input type="submit" style="height:48px;width:75px;" />
+                <input type="submit" style="height:48px;" value="Generate Barcodes" />
             </p>
         </form>
 
