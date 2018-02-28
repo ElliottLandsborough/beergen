@@ -11,7 +11,7 @@
 		<h1>BeerGen</h1>
 		<p>Get a legit barcode emailed to your inbox <a href="https://www.brewdog.com/1million" target="_blank">here</a>.</p>
 		<p>Please enter a number netween 10 and 99999 for 'end'.</p>
-		<p>I will iterate downwards from it 20 times.</p>
+		<p>I will count down from it 10 times.</p>
 		<p>From comparison of a few barcodes it looks like they all start with '5383' and end with the total number of codes that have been given away.</p>
 		<p>The middle is padded with '0' until the length is 14 characters.</p>
 		<p>This may all change in the future?</p>
@@ -32,7 +32,7 @@ if ($front && $end) {
 
     $endInt = intval($end);
 
-    for ($i = $endInt; $i >= ($endInt - 10); $i--) {
+    for ($i = $endInt; $i >= ($endInt - 9); $i--) {
         $zeroPadCount = $charCount - strlen($i);
         $frontPadded = str_pad($front, $zeroPadCount, "0");
         $barCode = $frontPadded . $i;
