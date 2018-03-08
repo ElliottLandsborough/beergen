@@ -98,5 +98,12 @@ foreach ($barcodes as $c => $bc) {
 }
 endif; ?>
     <p><a target="_blank" href="https://github.com/ElliottLandsborough/beergen">View on github...</a></p>
+
+    <script>
+        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','UA-115406758-1','auto');ga('send','pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
     </body>
 </html>
