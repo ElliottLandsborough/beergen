@@ -4,3 +4,8 @@
  - The middle is padded with '0' until the length is 14 characters.
  - example 1: 53830000008700 <-- not far off my legit one
  - example 2: 53830000099999 <-- i guessed this one
+
+## How to use
+ - git clone
+ - composer install
+ - php -S localhost:8000

@@ -41,23 +41,38 @@
 
 require_once 'vendor/autoload.php';
 
+// get the values from the url if they exist
 $front = isset($_GET['front']) ? $_GET['front'] : false;
 $end = isset($_GET['end']) ? $_GET['end'] : false;
 $end = (intval($end) >= 10) ? $end : '10';
 
+// if both front and end are not empty
 if ($front && $end) {
+    // the barcode is always 14 digits long
     $charCount = 14;
 
     $barcodes = [];
 
     $endInt = intval($end);
 
+    // loop 10 times
     for ($i = $endInt; $i >= ($endInt - 9); $i--) {
+        // how many zeros do we want in the middle?
         $zeroPadCount = $charCount - strlen($i);
+
+        // add the zeros to the end of 'front' value
         $frontPadded = str_pad($front, $zeroPadCount, "0");
+
+        // create the full barcode number
         $barCode = $frontPadded . $i;
+
+        // instantiate the barcode generator
         $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
+
+        // create the barcode images, save them to array
         $barcodes[$barCode] = '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($barCode, $generator::TYPE_CODE_128, 2.5, 100)) . '">';
+
+        // we have generated some barcodes!
         $generated = true;
     }
 }
@@ -77,26 +92,32 @@ if ($front && $end) {
             </p>
         </form>
 
-<?php if (isset($generated)) : ?>
-
-        <style>
-        img {display: block; margin: 0 auto;}
-        .text {color:#000000;font-family:Arial,Helvetica,sans-serif;font-size:21px;font-weight:bold;line-height:18px;letter-spacing:0.7px;text-align:center}
-        </style>
 <?php
 
-foreach ($barcodes as $c => $bc) {
-    echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
-    echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
+// if we have generated any barcodes?
+if (isset($generated)) :
+    // display the css
+    ?>
+        <style>
+            img {display: block; margin: 0 auto;}
+            .text {color:#000000;font-family:Arial,Helvetica,sans-serif;font-size:21px;font-weight:bold;line-height:18px;letter-spacing:0.7px;text-align:center}
+        </style>
+    <?php
 
-    echo $bc;
+    // loop through the barcodes and display them
+    foreach ($barcodes as $c => $bc) {
+        echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
+        echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
 
-    echo '<p class="text">' . $c . '</p>';
+        echo $bc;
 
-    echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
-    echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
-}
+        echo '<p class="text">' . $c . '</p>';
+
+        echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
+        echo '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
+    }
 endif; ?>
+
     <p><a target="_blank" href="https://github.com/ElliottLandsborough/beergen">View on github...</a></p>
 
     <script>
